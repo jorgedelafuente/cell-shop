@@ -1,0 +1,22 @@
+header {
+  background-color: #dae8fc;
+  border: 2px solid #7192c1;
+  margin: 16px 1.7%;
+  padding: 20px;
+  display: grid;
+  grid-template-areas:
+    "title cart"
+    "nav  .";
+
+  &:first-child {
+    grid-area: title;
+  }
+
+  &:last-child {
+    grid-area: cart;
+  }
+}
+
+header > nav {
+  grid-area: nav;
+}
