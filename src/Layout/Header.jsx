@@ -8,7 +8,7 @@ const Header = () => {
         <Link to="/">CELL SHOP</Link>
       </div>
       <nav>
-        <Link to="/">bread crumbs</Link>
+        <Link to="/product/">bread crumbs</Link>
       </nav>
       <div>Cart</div>
     </header>

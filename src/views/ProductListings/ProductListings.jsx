@@ -1,5 +1,7 @@
+import { Layout } from "../../Layout";
+
 const ProductListings = () => {
-  return <div>ProductListings</div>;
+  return <Layout>ProductListings</Layout>;
 };
 
 export default ProductListings;
