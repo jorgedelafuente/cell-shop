@@ -1,0 +1,14 @@
+.breadcrumbs > * {
+    display: inline-block;
+}
+.breadcrumbs .crumb a:after {
+    content: "/";
+    margin: 0px 5px;
+}
+
+.breadcrumbs .crumb a:last-child:after {
+    display: none;
+}
+.breadcrumbs .crumb a {
+    text-decoration: none;
+}
