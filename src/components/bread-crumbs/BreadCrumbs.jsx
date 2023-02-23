@@ -32,7 +32,7 @@ const BreadCrumbLink = ({ crumbs, productList }) => {
     return (
       <>
         <NavLink to="product">Devices</NavLink>
-        <NavLink to={`product/${productId}`}>{findProduct.model}</NavLink>
+        <NavLink to={`product/${productId}`}>{findProduct?.model}</NavLink>
       </>
     );
   }

@@ -12,6 +12,7 @@ import { Layout } from './layout';
 
 import ProductDetails from './views/product-details/ProductDetails';
 import ProductList from './views/product-list/ProductList';
+import ErrorPage from './views/error-page/ErrorPage';
 
 // const queryClient = new QueryClient({
 //   defaultOptions: {
@@ -28,7 +29,7 @@ const router = createBrowserRouter(
       path="/"
       element={<Layout />}
       loader={productListLoader}
-      errorElement={<>There was ErroR!</>}
+      errorElement={<ErrorPage />}
     >
       <Route index element={<ProductList />} />
       <Route path="product" index element={<ProductList />} />
@@ -36,7 +37,7 @@ const router = createBrowserRouter(
         path="product/:id"
         element={<ProductDetails />}
         loader={productDetailsLoader}
-        errorElement={<>There was ann ErroR!</>}
+        errorElement={<ErrorPage />}
       />
     </Route>
   )
