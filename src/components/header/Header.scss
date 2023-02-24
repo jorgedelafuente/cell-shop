@@ -6,15 +6,15 @@ header {
   display: grid;
   grid-template-areas:
     "title cart"
-    "nav  .";
+    "nav  nav";
+}
 
-  &:first-child {
-    grid-area: title;
-  }
+header > div:first-child {
+  grid-area: title;
+}
 
-  &:last-child {
-    grid-area: cart;
-  }
+header > div:last-child {
+  grid-area: cart;
 }
 
 header > nav {

@@ -1,4 +1,4 @@
-export const productListLoader = async () => {
+export const productListFetcher = async () => {
   const res = await fetch(
     'https://itx-frontend-test.onrender.com/api/product/'
   );
@@ -8,4 +8,15 @@ export const productListLoader = async () => {
   }
 
   return res.json();
+};
+
+const productListQuery = () => ({
+  queryKey: 'products',
+  queryFn: () => productListFetcher(),
+});
+
+export const productListLoader = (queryClient) => async () => {
+  if (!queryClient.getQueryData('products')) {
+    return await queryClient.fetchQuery(productListQuery());
+  } else return queryClient.getQueryData('products');
 };

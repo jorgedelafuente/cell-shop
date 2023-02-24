@@ -4,7 +4,7 @@ import BreadCrumbs from '../bread-crumbs/BreadCrumbs';
 
 import './Header.scss';
 
-const Header = ({ cart, productList }) => {
+const Header = ({ cart, productModel }) => {
   const location = useLocation();
 
   return (
@@ -13,7 +13,7 @@ const Header = ({ cart, productList }) => {
         <Link to="/">CELL SHOP</Link>
       </div>
 
-      <BreadCrumbs productList={productList} location={location} />
+      <BreadCrumbs productModel={productModel} location={location} />
 
       <div>Cart : {cart}</div>
     </header>

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
 
 import ProductDescription from './ProductDescription';
@@ -5,8 +6,12 @@ import ProductImage from './ProductImage';
 import ProductActions from './ProductActions';
 
 const ProductDetails = () => {
-  const { cart, setCart } = useOutletContext();
+  const { cart, setCart, setProductModel } = useOutletContext();
   const productDetails = useLoaderData();
+
+  useEffect(() => {
+    setProductModel(productDetails.model);
+  }, [productDetails, setProductModel]);
 
   return (
     <>

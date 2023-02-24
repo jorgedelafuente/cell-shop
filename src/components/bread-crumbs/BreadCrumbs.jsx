@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import './BreadCrumbs.scss';
 
-const BreadCrumbs = ({ location, productList }) => {
+const BreadCrumbs = ({ location, productModel }) => {
   const crumbs = location.pathname.split('/').filter((crumb) => crumb !== '');
   return (
     <nav className="breadcrumbs">
       <div className="crumb">
-        <BreadCrumbLink crumbs={crumbs} productList={productList} />
+        <BreadCrumbLink crumbs={crumbs} productModel={productModel} />
       </div>
     </nav>
   );
@@ -14,7 +14,7 @@ const BreadCrumbs = ({ location, productList }) => {
 
 export default BreadCrumbs;
 
-const BreadCrumbLink = ({ crumbs, productList }) => {
+const BreadCrumbLink = ({ crumbs, productModel }) => {
   // Home Page
   if (!crumbs.length) {
     return <NavLink to="/">Home</NavLink>;
@@ -28,11 +28,10 @@ const BreadCrumbLink = ({ crumbs, productList }) => {
   // Product Details Page
   if (crumbs[0] === 'product') {
     const productId = crumbs[1];
-    const findProduct = productList.find((product) => product.id === productId);
     return (
       <>
         <NavLink to="product">Devices</NavLink>
-        <NavLink to={`product/${productId}`}>{findProduct?.model}</NavLink>
+        <NavLink to={`product/${productId}`}>{productModel}</NavLink>
       </>
     );
   }
