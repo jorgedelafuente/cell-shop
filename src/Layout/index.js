@@ -1,4 +1,4 @@
-import Layout from "./Layout";
-import Header from "./Header";
+import Layout from './Layout';
+import Header from '../components/header/Header';
 
 export { Layout, Header };

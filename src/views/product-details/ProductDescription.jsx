@@ -12,12 +12,16 @@ const ProductDescription = ({ product }) => {
       <div>{product.battery}</div>
 
       <div>
-        <div>{product.primaryCamera.join(' ')}</div>
+        <div>
+          {product.primaryCamera.constructor == Array
+            ? product.primaryCamera.join(' ')
+            : product.primaryCamera}
+        </div>
         <div>{product.secondaryCmera}</div>
       </div>
 
       <div>{product.dimentions}</div>
-      <div>{product.weight}</div>
+      <div>Weight {product.weight}</div>
     </div>
   );
 };

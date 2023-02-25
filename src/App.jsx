@@ -1,36 +1,58 @@
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import {
-  QueryClient,
-  QueryClientProvider,
-  // useQuery,
-} from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from 'react-router-dom';
+import { productDetailsLoader, productListLoader } from './services/';
 
-import ProductDetails from "./views/ProductDetails/ProductDetails";
-import ProductList from "./views/ProductList/ProductList";
-import { Header } from "./Layout";
+import { Layout } from './layout';
+
+import ProductDetails from './views/product-details/ProductDetails';
+import ProductList from './views/product-list/ProductList';
+import ErrorPage from './views/error-page/ErrorPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: Infinity,
-      cacheTime: Infinity,
+      staleTime: 60 * 60 * 1000,
+      cacheTime: 60 * 60 * 1000,
     },
   },
 });
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Layout />} errorElement={<ErrorPage />}>
+      <Route
+        index
+        element={<ProductList />}
+        loader={productListLoader(queryClient)}
+      />
+      <Route
+        path="product"
+        index
+        element={<ProductList />}
+        loader={productListLoader(queryClient)}
+      />
+      <Route
+        path="product/:id"
+        element={<ProductDetails />}
+        loader={productDetailsLoader(queryClient)}
+        errorElement={<ErrorPage />}
+      />
+    </Route>
+  )
+);
+
 function App() {
   return (
-    <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <Header />
-        <Routes>
-          <Route path="/" element={<ProductList />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-        </Routes>
-      </QueryClientProvider>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+    </QueryClientProvider>
   );
 }
 
