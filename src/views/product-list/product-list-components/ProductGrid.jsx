@@ -1,13 +1,21 @@
 import ProductCard from './ProductCard';
 import './ProductGrid.scss';
 
-const ProductGrid = ({ products }) => {
+const ProductGrid = ({ productList }) => {
   return (
-    <div className="products-container">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </div>
+    <>
+      {productList.length ? (
+        <div className="products-container">
+          {productList.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      ) : (
+        <div className="products-error">
+          <span>No Products found.</span>
+        </div>
+      )}
+    </>
   );
 };
 

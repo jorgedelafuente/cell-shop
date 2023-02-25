@@ -1,9 +1,19 @@
-import "./SearchBar.scss";
+import './SearchBar.scss';
 
-const SearchBar = () => {
+const SearchBar = ({ searcInputText, setSearcInputText }) => {
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearcInputText(e.target.value.toLowerCase());
+  };
+
   return (
     <div className="searchbar-container">
-      <input />
+      <input
+        type="text"
+        placeholder="Search by Brand or Model"
+        onChange={handleChange}
+        value={searcInputText}
+      />
     </div>
   );
 };
