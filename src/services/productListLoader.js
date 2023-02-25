@@ -1,18 +1,19 @@
-export const productListFetcher = async () => {
-  const res = await fetch(
-    'https://itx-frontend-test.onrender.com/api/product/'
-  );
+import axios from 'axios';
 
-  if (!res.ok) {
-    throw Error('There was an error fetching data');
+export const getProductList = async () => {
+  try {
+    const { data } = await axios.get(
+      'https://itx-frontend-test.onrender.com/api/product/'
+    );
+    return data;
+  } catch (error) {
+    throw Error('Could not get Products.');
   }
-
-  return res.json();
 };
 
 const productListQuery = () => ({
   queryKey: 'products',
-  queryFn: () => productListFetcher(),
+  queryFn: () => getProductList(),
 });
 
 export const productListLoader = (queryClient) => async () => {

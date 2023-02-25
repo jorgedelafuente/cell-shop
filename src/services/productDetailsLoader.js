@@ -1,18 +1,19 @@
-export const productDetailsFetcher = async (params) => {
-  const res = await fetch(
-    'https://itx-frontend-test.onrender.com/api/product/' + params
-  );
+import axios from 'axios';
 
-  if (!res.ok) {
+const getProductDetails = async (params) => {
+  try {
+    const { data } = await axios.get(
+      `https://itx-frontend-test.onrender.com/api/product/${params}`
+    );
+    return data;
+  } catch (error) {
     throw Error('Could not find that product.');
   }
-
-  return res.json();
 };
 
 const productDetailsQuery = (params) => ({
   queryKey: ['productDetails', params],
-  queryFn: () => productDetailsFetcher(params),
+  queryFn: () => getProductDetails(params),
 });
 
 export const productDetailsLoader =

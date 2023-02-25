@@ -6,7 +6,7 @@ import ProductImage from './ProductImage';
 import ProductActions from './ProductActions';
 
 const ProductDetails = () => {
-  const { cart, setCart, setProductModel } = useOutletContext();
+  const { setProductModel, addToCartMutation } = useOutletContext();
   const productDetails = useLoaderData();
 
   useEffect(() => {
@@ -18,10 +18,12 @@ const ProductDetails = () => {
       <ProductImage imgUrl={productDetails.imgUrl} />
       <ProductDescription product={productDetails} />
       <ProductActions
-        cart={cart}
-        setCart={setCart}
-        productActions={productDetails.options}
-        productId={productDetails.id}
+        addToCartMutation={addToCartMutation}
+        cartOptions={{
+          id: productDetails.id,
+          colors: productDetails.options.colors,
+          storages: productDetails.options.storages,
+        }}
       />
     </>
   );

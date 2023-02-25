@@ -4,7 +4,7 @@ import BreadCrumbs from '../bread-crumbs/BreadCrumbs';
 
 import './Header.scss';
 
-const Header = ({ cart, productModel }) => {
+const Header = ({ cartCount, productModel }) => {
   const location = useLocation();
 
   return (
@@ -15,7 +15,7 @@ const Header = ({ cart, productModel }) => {
 
       <BreadCrumbs productModel={productModel} location={location} />
 
-      <div>Cart : {cart}</div>
+      <div>Cart : {cartCount}</div>
     </header>
   );
 };
