@@ -1,7 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
 
-import ProductGrid from './ProductGrid';
-import SearchBar from './SearchBar';
+import { SearchBar, ProductGrid } from './product-list-components/';
 
 const ProductList = () => {
   const productList = useLoaderData();

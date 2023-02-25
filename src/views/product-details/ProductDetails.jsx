@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
-
-import ProductDescription from './ProductDescription';
-import ProductImage from './ProductImage';
-import ProductActions from './ProductActions';
+import {
+  ProductActions,
+  ProductImage,
+  ProductDescription,
+} from './product-details-components';
 
 const ProductDetails = () => {
   const { setProductModel, addToCartMutation } = useOutletContext();
