@@ -19,5 +19,7 @@ const productListQuery = () => ({
 export const productListLoader = (queryClient) => async () => {
   if (!queryClient.getQueryData('products')) {
     return await queryClient.fetchQuery(productListQuery());
-  } else return queryClient.getQueryData('products');
+  } else {
+    return queryClient.getQueryData('products');
+  }
 };

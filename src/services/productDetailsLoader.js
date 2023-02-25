@@ -22,5 +22,7 @@ export const productDetailsLoader =
     const params = request.url.split('/').at(-1);
     if (!queryClient.getQueryData(['productDetails', params])) {
       return await queryClient.fetchQuery(productDetailsQuery(params));
-    } else return queryClient.getQueryData(['productDetails', params]);
+    } else {
+      return queryClient.getQueryData(['productDetails', params]);
+    }
   };
