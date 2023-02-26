@@ -1,7 +1,7 @@
 import ProductCard from './ProductCard';
-import './ProductGrid.scss';
+import './ProductListGrid.scss';
 
-const ProductGrid = ({ productList }) => {
+const ProductListGrid = ({ productList }) => {
   return (
     <>
       {productList.length ? (
@@ -19,4 +19,4 @@ const ProductGrid = ({ productList }) => {
   );
 };
 
-export default ProductGrid;
+export default ProductListGrid;

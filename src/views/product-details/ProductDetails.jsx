@@ -4,6 +4,7 @@ import {
   ProductActions,
   ProductImage,
   ProductDescription,
+  ProductDetailsGrid,
 } from './product-details-components';
 
 const ProductDetails = () => {
@@ -15,8 +16,11 @@ const ProductDetails = () => {
   }, [productDetails, setProductModel]);
 
   return (
-    <>
-      <ProductImage imgUrl={productDetails.imgUrl} />
+    <ProductDetailsGrid>
+      <ProductImage
+        imgUrl={productDetails.imgUrl}
+        altText={productDetails.model}
+      />
       <ProductDescription product={productDetails} />
       <ProductActions
         addToCartMutation={addToCartMutation}
@@ -26,7 +30,7 @@ const ProductDetails = () => {
           storages: productDetails.options.storages,
         }}
       />
-    </>
+    </ProductDetailsGrid>
   );
 };
 

@@ -1,5 +1,5 @@
 import ProductCard from './ProductCard';
 import SearchBar from './SearchBar';
-import ProductGrid from './ProductGrid';
+import ProductListGrid from './ProductListGrid';
 
-export { ProductCard, ProductGrid, SearchBar };
+export { ProductCard, ProductListGrid, SearchBar };

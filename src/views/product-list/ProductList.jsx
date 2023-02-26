@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import { useState } from 'react';
 
-import { SearchBar, ProductGrid } from './product-list-components/';
+import { SearchBar, ProductListGrid } from './product-list-components/';
 
 const ProductList = () => {
   const productList = useLoaderData();
@@ -19,7 +19,7 @@ const ProductList = () => {
         searcInputText={searcInputText}
         setSearcInputText={setSearcInputText}
       />
-      <ProductGrid productList={filteredProductList} />
+      <ProductListGrid productList={filteredProductList} />
     </>
   );
 };
