@@ -1,0 +1,11 @@
+.product-details-container {
+    display: grid;
+    min-height: calc(100vh - 180px);
+    padding: 40px;
+    grid-template-areas:
+        ". product-image product-description ."
+        ". product-image product-actions .";
+    justify-content: center;
+    width: 800px;
+    margin: 0 auto;
+}

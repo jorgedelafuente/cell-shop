@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import { useState } from 'react';
 
-import { SearchBar, ProductListGrid } from './product-list-components/';
+import { SearchBar, ProductListGrid } from './components/';
 
 const ProductList = () => {
   const productList = useLoaderData();

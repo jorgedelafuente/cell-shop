@@ -1,13 +1,6 @@
 import { Link } from 'react-router-dom';
+import { productCardMapper } from '../mappers/productCardMapper';
 import './ProductCard.scss';
-
-const productCardMapper = (product) => {
-  return {
-    hydrate: {
-      price: product.price !== '' ? `€ ${product.price}` : '€ -',
-    },
-  };
-};
 
 const ProductCard = ({ product }) => {
   const { price } = productCardMapper(product).hydrate;

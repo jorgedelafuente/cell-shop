@@ -1,7 +1,10 @@
 .product-image {
     width: auto;
-    height: 60%;
+    height: 100%;
     object-fit: cover;
     grid-area: product-image;
     margin: 0 auto;
+    background-color: #f2f8f2;
+    padding: 20px;
+    min-height: calc(100vh - 300px);
 }

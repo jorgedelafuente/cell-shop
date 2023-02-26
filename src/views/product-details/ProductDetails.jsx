@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { useLoaderData, useOutletContext } from 'react-router-dom';
+import { useLoaderData, useOutletContext, Link } from 'react-router-dom';
 import {
   ProductActions,
   ProductImage,
   ProductDescription,
   ProductDetailsGrid,
-} from './product-details-components';
+} from './components';
 
 const ProductDetails = () => {
   const { setProductModel, addToCartMutation } = useOutletContext();
@@ -16,21 +16,24 @@ const ProductDetails = () => {
   }, [productDetails, setProductModel]);
 
   return (
-    <ProductDetailsGrid>
-      <ProductImage
-        imgUrl={productDetails.imgUrl}
-        altText={productDetails.model}
-      />
-      <ProductDescription product={productDetails} />
-      <ProductActions
-        addToCartMutation={addToCartMutation}
-        cartOptions={{
-          id: productDetails.id,
-          colors: productDetails.options.colors,
-          storages: productDetails.options.storages,
-        }}
-      />
-    </ProductDetailsGrid>
+    <>
+      <Link to={'/'}>Return to Products List</Link>
+      <ProductDetailsGrid>
+        <ProductImage
+          imgUrl={productDetails.imgUrl}
+          altText={productDetails.model}
+        />
+        <ProductDescription product={productDetails} />
+        <ProductActions
+          addToCartMutation={addToCartMutation}
+          cartOptions={{
+            id: productDetails.id,
+            colors: productDetails.options.colors,
+            storages: productDetails.options.storages,
+          }}
+        />
+      </ProductDetailsGrid>
+    </>
   );
 };
 
