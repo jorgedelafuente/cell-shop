@@ -7,7 +7,12 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
       <Link to={`/product/${product.id}`}>
-        <img alt={product.model} src={product.imgUrl} />
+        <img
+          alt={product.model}
+          src={product.imgUrl}
+          loading="lazy"
+          height="100px"
+        />
         <div>{price}</div>
         <div>{product.brand}</div>
         <div>

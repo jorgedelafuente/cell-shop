@@ -1,5 +1,5 @@
 .product-image {
-    width: auto;
+    min-width: 300px;
     height: 100%;
     object-fit: cover;
     grid-area: product-image;
