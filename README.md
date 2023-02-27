@@ -1,5 +1,28 @@
 # cell-shop
 
+Features : Product listings view, product details view, add to cart functionality and responsive design.
+
+## Tech Stack
+
+    React : UI Library
+    React Router : Nested layouts and loaders.
+    React Query : Caching, server state and fetching.
+    Axios : HTTP client.
+    SCSS : Styling.
+    ESLint : Linting.
+    Prettier : Code Formatter.
+
+----------
+
+## Getting Started
+
+1.) Download Repo and run the following commands:
+
+```console
+npm install
+npm run start
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -33,15 +56,3 @@ Checks the code using ESlint. \
 ESLint statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
 
 See the ESlint website [ESlint](https://eslint.org/) for more information.
-
--------------------
-
-# Tech Stack
-
-    React : UI Library
-    React Router : Nested layouts and loaders.
-    React Query : Caching, server state and fetching.
-    Axios : HTTP client.
-    SCSS : Styling.
-    ESLint : Linting.
-    Prettier : Code Formatter.
