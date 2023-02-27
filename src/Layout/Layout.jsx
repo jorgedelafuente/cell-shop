@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useMutation } from 'react-query';
 import { Outlet } from 'react-router-dom';
+
+import { addToCartService } from '../services/';
 import Header from '../components/header/Header';
 import './Layout.scss';
-import { addToCartService } from '../services/';
 
 const Layout = () => {
   const [productModel, setProductModel] = useState('');
@@ -18,7 +19,11 @@ const Layout = () => {
 
   return (
     <>
-      <Header cartCount={cartCount} productModel={productModel} />
+      <Header
+        cartCount={cartCount}
+        productModel={productModel}
+        cartIsLoading={addToCartMutation.isLoading}
+      />
       <main className="container">
         <Outlet context={{ setProductModel, addToCartMutation }} />
       </main>

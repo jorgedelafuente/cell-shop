@@ -1,6 +1,6 @@
 .product-image {
-    min-width: 300px;
-    object-fit: cover;
+    width: 300px;
+    object-fit: contain;
     grid-area: product-image;
     margin: 0 auto;
     background-color: #f2f8f2;
