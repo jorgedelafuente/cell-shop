@@ -41,6 +41,7 @@ See the ESlint website [ESlint](https://eslint.org/) for more information.
     React : UI Library
     React Router : Nested layouts and loaders.
     React Query : Caching, server state and fetching.
+    Axios : HTTP client.
     SCSS : Styling.
     ESLint : Linting.
     Prettier : Code Formatter.
