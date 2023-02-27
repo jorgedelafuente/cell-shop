@@ -6,6 +6,12 @@
     input {
         width: 35%;
     }
+    @media screen and (max-width: 600px) {
+        justify-content: center;
+        input {
+            width: 75%;
+        }
+    }
     input::placeholder {
         font-weight: bold;
         opacity: 0.75;
