@@ -47,7 +47,13 @@ const ProductActions = ({
           disabled={!storageOption || !colorOption}
           onClick={() => handleCart(id)}
         >
-          Add To Cart
+          {!storageOption || !colorOption ? (
+            <span className="warning-text">
+              *Please Select Storage and Color
+            </span>
+          ) : (
+            'Add To Cart'
+          )}
         </button>
       </div>
     </div>
