@@ -1,5 +1,5 @@
 import { productListLoader } from './productListLoader';
 import { productDetailsLoader } from './productDetailsLoader';
-import { addToCartService } from './addToCartService';
+import { addToCartLoader } from './addToCartLoader';
 
-export { productListLoader, productDetailsLoader, addToCartService };
+export { productListLoader, productDetailsLoader, addToCartLoader };
