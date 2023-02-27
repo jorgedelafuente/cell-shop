@@ -9,8 +9,8 @@ const ProductActions = ({
   const handleCart = (productId) => {
     addToCartMutation.mutate({
       id: productId,
-      colorCode: colorOption,
-      storageCode: storageOption,
+      colorCode: Number(colorOption),
+      storageCode: Number(storageOption),
     });
   };
 

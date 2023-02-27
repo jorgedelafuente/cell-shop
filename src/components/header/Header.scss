@@ -26,8 +26,10 @@ header > div:last-child {
   justify-content: flex-end;
   align-items: center;
   span {
-    text-align: center;
-    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
     background-color: white;
     position: relative;
     right: 5px;
@@ -35,6 +37,7 @@ header > div:last-child {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    font-weight: bold;
   }
 }
 
