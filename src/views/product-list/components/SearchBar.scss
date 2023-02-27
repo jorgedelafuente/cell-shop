@@ -1,5 +1,9 @@
 .searchbar-container {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+
+    input {
+        width: 35%;
+    }
 }

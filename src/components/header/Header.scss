@@ -6,16 +6,36 @@ header {
   display: grid;
   grid-template-areas:
     "title cart"
-    "nav  nav";
+    "nav  cart";
   height: 80px;
 }
 
 header > div:first-child {
   grid-area: title;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 header > div:last-child {
   grid-area: cart;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  span {
+    text-align: center;
+    font-size: 0.8rem;
+    background-color: white;
+    position: relative;
+    right: 5px;
+    bottom: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
 }
 
 header > nav {

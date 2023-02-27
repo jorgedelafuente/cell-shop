@@ -1,0 +1,19 @@
+.product-details-container {
+    display: grid;
+    min-height: calc(100vh - 180px);
+    padding: 40px;
+    grid-template-areas:
+        "product-image product-description"
+        "product-image product-actions";
+    justify-content: center;
+    margin: 0 auto;
+    grid-gap: 20px 60px;
+
+    @media screen and (max-width: 700px) {
+        grid-template-areas:
+            "product-image"
+            "product-description"
+            "product-actions";
+        grid-gap: 0px;
+    }
+}

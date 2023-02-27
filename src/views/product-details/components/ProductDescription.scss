@@ -1,0 +1,17 @@
+.product-description {
+    width: 300px;
+    grid-area: product-description;
+    padding: 20px;
+    justify-self: start;
+    background-color: #f2f8f2;
+    word-wrap: break-word;
+    font-size: 0.8rem;
+    & > div:first-child {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    & > div:nth-child(2) {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}

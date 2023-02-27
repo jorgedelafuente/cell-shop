@@ -1,0 +1,29 @@
+.product-actions {
+    grid-area: product-actions;
+    background-color: #f2f8f2;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 20px;
+    select {
+        margin-bottom: 10px;
+    }
+    button {
+        padding: 5px 15px;
+    }
+    button,
+    option,
+    select:hover {
+        cursor: pointer;
+    }
+    button:disabled:hover {
+        cursor: not-allowed;
+    }
+    button {
+        margin-top: 15px;
+    }
+}
+
+.warning-text {
+    font-size: 0.8rem;
+    color: darkorange;
+}
