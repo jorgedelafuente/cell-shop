@@ -1,10 +1,9 @@
 import axios from 'axios';
+import { baseUrl } from '.';
 
 const getProductDetails = async (params) => {
   try {
-    const { data } = await axios.get(
-      `https://itx-frontend-test.onrender.com/api/product/${params}`
-    );
+    const { data } = await axios.get(`${baseUrl}/product/${params}`);
     return data;
   } catch (error) {
     throw Error('Could not find that product.');

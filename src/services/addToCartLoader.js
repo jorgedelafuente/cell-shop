@@ -1,15 +1,13 @@
 import axios from 'axios';
+import { baseUrl } from '.';
 
 const addToCartService = async ({ id, colorCode, storageCode }) => {
   try {
-    const { data } = await axios.post(
-      'https://itx-frontend-test.onrender.com/api/cart',
-      {
-        id,
-        colorCode,
-        storageCode,
-      }
-    );
+    const { data } = await axios.post(`${baseUrl}/cart`, {
+      id,
+      colorCode,
+      storageCode,
+    });
 
     return data;
   } catch (error) {

@@ -1,10 +1,9 @@
 import axios from 'axios';
+import { baseUrl } from '.';
 
 export const getProductList = async () => {
   try {
-    const { data } = await axios.get(
-      'https://itx-frontend-test.onrender.com/api/product/'
-    );
+    const { data } = await axios.get(`${baseUrl}/product`);
     return data;
   } catch (error) {
     throw Error('Could not get Products.');

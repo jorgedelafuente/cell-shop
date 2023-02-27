@@ -33,3 +33,14 @@ Checks the code using ESlint. \
 ESLint statically analyzes your code to quickly find problems. It is built into most text editors and you can run ESLint as part of your continuous integration pipeline.
 
 See the ESlint website [ESlint](https://eslint.org/) for more information.
+
+-------------------
+
+# Tech Stack
+
+    React : UI Library
+    React Router : Nested layouts and loaders.
+    React Query : Caching, server state and fetching.
+    SCSS : Styling.
+    ESLint : Linting.
+    Prettier : Code Formatter.
