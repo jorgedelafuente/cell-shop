@@ -6,4 +6,10 @@
     input {
         width: 35%;
     }
+    input::placeholder {
+        font-weight: bold;
+        opacity: 0.75;
+        padding-left: 1px;
+        font-size: 0.75rem;
+    }
 }

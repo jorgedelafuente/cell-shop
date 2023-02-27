@@ -3,7 +3,7 @@ import BreadCrumbs from '../bread-crumbs/BreadCrumbs';
 
 import './Header.scss';
 
-const Header = ({ cartCount, productModel }) => {
+const Header = ({ cartCount, productModel, cartIsLoading }) => {
   const location = useLocation();
 
   return (
@@ -19,7 +19,7 @@ const Header = ({ cartCount, productModel }) => {
           src={process.env.PUBLIC_URL + '/images/shopping-cart.svg'}
           alt="shopping cart"
         />
-        <span>{cartCount}</span>
+        <span>{cartIsLoading ? ' - ' : cartCount}</span>
       </div>
     </header>
   );
