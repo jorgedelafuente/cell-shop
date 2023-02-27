@@ -7,8 +7,7 @@ const ProductImage = ({ imgUrl, altText }) => {
       src={imgUrl}
       alt={altText}
       loading="lazy"
-      height="100%"
-      width="350px"
+      width="300px"
     />
   );
 };

@@ -1,5 +1,4 @@
 import { Link, useLocation } from 'react-router-dom';
-
 import BreadCrumbs from '../bread-crumbs/BreadCrumbs';
 
 import './Header.scss';
@@ -15,7 +14,13 @@ const Header = ({ cartCount, productModel }) => {
 
       <BreadCrumbs productModel={productModel} location={location} />
 
-      <div>Cart : {cartCount}</div>
+      <div>
+        <img
+          src={process.env.PUBLIC_URL + '/images/shopping-cart.svg'}
+          alt="shopping cart"
+        />
+        <span>{cartCount}</span>
+      </div>
     </header>
   );
 };
